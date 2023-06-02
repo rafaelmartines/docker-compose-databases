@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: mysql
+    image: mysql:${MYSQL_TAG}
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+        - ./my-db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+volumes:
+  my-db:
