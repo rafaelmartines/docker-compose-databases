@@ -16,7 +16,7 @@ Change the database credentials and execute the command:
 docker-compose up -d
 ```
 > [!NOTE]
-> Just remember, for your applications have access to the database you can [include the docker containers on the same network](//docs.docker.com/engine/reference/commandline/network_connect/) or just put the IP of the host of the container, in this case, your PC to your database configuration files.
+> Just remember, for your applications have access to the database you can [include the docker containers on the same network](//docs.docker.com/engine/reference/commandline/network_connect/) or just put the Host IP, in this case, your PC, to your database configuration files.
 
 > [!WARNING]
-> If you change the credentials on .env file and try to rebuild the docker, you need to remove the volume folders, since the credentials are store there after you build the docker image, if you don't remove, the new credentials will not be applied.
+> If you change the credentials on .env file and try to rebuild the docker, you need to remove the volume folders, since the credentials are stored there after you build the docker image, if you don't remove, the new credentials will not be applied.
