@@ -15,7 +15,7 @@ Change the database credentials and execute the command:
 ```shell
 docker-compose up -d
 ```
-> [!INFO]
+> [!NOTE]
 > Just remember, for your applications have access to the database you can [include the docker containers on the same network](//docs.docker.com/engine/reference/commandline/network_connect/) or just put the IP of the host of the container, in this case, your PC to your database configuration files.
 
 > [!WARNING]
