@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+
+  db:
+    container_name: oracle
+    image: oracle:${ORACLE_VERSION}
+    restart: always
+    environment:
+      ORACLE_SID: ${ORACLE_SID}
+      ORACLE_PDB: ${ORACLE_PDB}
+      ORACLE_PWD: ${ORACLE_PWD}
+    volumes:
+        - ./oracle-data:/opt/oracle/oradata
+        - ./oracle-backup:/opt/oracle/backup
+    ports:
+      - "1521:1521"
+    # For Podman
+    privileged: true
+volumes:
+  oracle-data:
+  oracle-backup:
