@@ -4,9 +4,15 @@ services:
 
   db:
     container_name: oracle
-    image: oracle:${ORACLE_VERSION}
+    image: oraclelinux:${ORACLE_VERSION}
     restart: always
+    tty: true
     environment:
+      ORACLE_ALLOW_REMOTE: true
+      ORACLE_EDITION: developer
+      INIT_SGA_SIZE: 2000
+      INIT_PGA_SIZE: 500
+      ENABLE_ARCHIVELOG: false
       ORACLE_SID: ${ORACLE_SID}
       ORACLE_PDB: ${ORACLE_PDB}
       ORACLE_PWD: ${ORACLE_PWD}
